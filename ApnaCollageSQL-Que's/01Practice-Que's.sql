@@ -1,0 +1,16 @@
+CREATE DATABASE XYZ;
+
+USE XYZ;
+
+CREATE TABLE
+    STUDENT (Id INT PRIMARY KEY, Name VARCHAR(50), Salary INT);
+
+INSERT INTO
+    STUDENT (Id, Name, Salary) VALUE (01, "AMAN", 500),
+    (02, "RAJ", 1000),
+    (03, "SOURABH", 900);
+
+SELECT
+    *
+FROM
+    STUDENT;
