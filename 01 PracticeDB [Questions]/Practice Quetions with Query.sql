@@ -49,5 +49,27 @@ JOIN products p
     ON od.productCode = p.productCode
 WHERE p.productName IN ('Laptop', 'Tablet');
 
-
 -- 10. Find employee names starting with 'J'
+SELECT * FROM employees WHERE firstName LIKE "J%";
+
+-- 11. Case-insensitive search for employee names containing 'son'
+
+-- 12. Display employee names with salary category as 'High' if above 35,000, else 'Low'
+
+-- 13. Show delivery date, but if NULL display 'Pending'
+
+-- 14. Compare two columns and return 'SAME' if they match, else show firstName
+
+-- 15. Display employee names and their salary incremented by 10% as "New Salary"
+
+-- 16. Get employees in 'Sales' or 'Marketing' with salary > 30,000
+
+-- 17.  Show product name and availability ('In Stock' if quantity > 0, else 'Out of Stock')
+
+-- 18. Display customer names and delivery dates, show 'Not Delivered' if NULL
+
+-- 19. Retrieve products with name containing 'a' (case-insensitive) and price 50–200, ordered by price
+
+-- 20. Count the number of different products sold
+
+-- 21. Count how many employees have salaries above 70,000
