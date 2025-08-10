@@ -22,13 +22,32 @@ SELECT empID AS ID, CONCAT(firstName, ' ', lastName) AS Name,
 FROM employees;
 
 -- 05. Show all products buy price above 50 Dollar.
+SELECT * FROM products WHERE buyPrice > 50;
 
 -- 06. Fetch the top 2 highest paid employees in our company.
+SELECT * FROM employees ORDER BY salary DESC LIMIT 2;
 
 -- 07. Get employees who are either in Sales or have a salary above 30,000.
+SELECT * FROM employees WHERE department = "Sales" OR salary > 30000;
 
 -- 08. Fetch products with a price between 20 and 100.
+SELECT * FROM products WHERE buyPrice BETWEEN 20 AND 100;
+
+SELECT productCode AS proID, productName, buyPrice AS price 
+FROM products 
+WHERE buyPrice BETWEEN 20 AND 100;
 
 -- 09. Retrieve orders where the product is either 'Laptop' or 'Tablet'
+SELECT * FROM products WHERE productLine IN ("Laptop", "Tablet");
+
+SELECT o.orderNumber,
+       p.productName
+FROM orders o
+JOIN orderdetails od 
+    ON o.orderNumber = od.orderNumber
+JOIN products p 
+    ON od.productCode = p.productCode
+WHERE p.productName IN ('Laptop', 'Tablet');
+
 
 -- 10. Find employee names starting with 'J'
