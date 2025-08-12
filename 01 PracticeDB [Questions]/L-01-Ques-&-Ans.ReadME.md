@@ -1,4 +1,4 @@
-# 📚 SQL Practice — Lesson 01
+# 📚 SQL Practice — Lesson 01 Questions & Answers
 
 This document contains **SQL practice questions** along with example answers.  
 Designed for beginners to intermediate learners preparing for interviews or
