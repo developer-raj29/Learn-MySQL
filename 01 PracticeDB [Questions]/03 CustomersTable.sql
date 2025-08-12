@@ -2,9 +2,11 @@
 CREATE TABLE
     customers (
         customerNumber INT PRIMARY KEY AUTO_INCREMENT,
-        customerName VARCHAR(100),
+        customerName VARCHAR(100) NOT NULL UNIQUE,
         city VARCHAR(50)
-    );
+);
+
+DROP TABLE customers;
 
 INSERT INTO
     customers (customerName, city)

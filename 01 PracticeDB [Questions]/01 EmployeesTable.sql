@@ -36,7 +36,15 @@ VALUES
     ('Jessica', 'Wilson', 'Sales', 28000),
     ('Jack', 'Anderson', 'Finance', 90000),
     ('Jason', 'Thompson', 'IT', 0),
-    ('James', 'Jackson', 'Marketing', 45000);
+    ('James', 'Jackson', 'Marketing', 45000),
+	('John', 'John', 'Sales', 55000),
+    ('Jane', 'Jane', 'Marketing', 36000);
+    
+INSERT INTO
+    Employees (firstName, lastName, department, salary)
+VALUES
+    ('John', 'John', 'Sales', 55000),
+    ('Jane', 'Jane', 'Marketing', 36000);
 
 -- GET All information from Employees Table
 SELECT

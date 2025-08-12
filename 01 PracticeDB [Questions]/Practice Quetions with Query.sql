@@ -53,23 +53,55 @@ WHERE p.productName IN ('Laptop', 'Tablet');
 SELECT * FROM employees WHERE firstName LIKE "J%";
 
 -- 11. Case-insensitive search for employee names containing 'son'
+SELECT * FROM employees WHERE firstName LIKE '%son%';
 
 -- 12. Display employee names with salary category as 'High' if above 35,000, else 'Low'
+SELECT CONCAT(firstName, " ", lastName) as Name, salary,
+       CASE
+          WHEN salary > 35000 THEN "HIGH"
+          WHEN salary > 30000 THEN "MEDIUM"
+          ELSE "LOW"
+       END as Salary
+FROM employees;
 
 -- 13. Show delivery date, but if NULL display 'Pending'
+SELECT orderNumber, orderDate, 
+       COALESCE(IFNULL(shippedDate, "Pending")) as Status
+FROM orders;
 
 -- 14. Compare two columns and return 'SAME' if they match, else show firstName
+SELECT empId, COALESCE(NULLIF(firstName, lastName), 'SAME') AS col 
+FROM employees;
 
 -- 15. Display employee names and their salary incremented by 10% as "New Salary"
+SELECT empId, CONCAT(firstName, " ", lastName) as Name,
+      salary, salary * 10/100 AS New_Salary
+FROM employees;
 
 -- 16. Get employees in 'Sales' or 'Marketing' with salary > 30,000
+SELECT * 
+FROM employees 
+WHERE (department = "Sales" OR "Marketing") AND salary > 30000;
 
 -- 17.  Show product name and availability ('In Stock' if quantity > 0, else 'Out of Stock')
+SELECT productName, buyPrice, 
+	CASE 
+	   WHEN quantityInStock > 0 THEN "In Stock"
+       ELSE "Out of Stock"
+	END AS Availability
+FROM products; 
 
 -- 18. Display customer names and delivery dates, show 'Not Delivered' if NULL
+SELECT orderNumber, customerNumber, customerName,
+       COALESCE(shippedDate, 'Not Delivered') AS deliveryStatus
+FROM orders;
 
 -- 19. Retrieve products with name containing 'a' (case-insensitive) and price 50–200, ordered by price
+SELECT * 
+FROM products 
+WHERE productName LIKE "%a%" AND buyPrice BETWEEN 20 AND 200 ORDER BY buyPrice ASC;
 
 -- 20. Count the number of different products sold
+
 
 -- 21. Count how many employees have salaries above 70,000

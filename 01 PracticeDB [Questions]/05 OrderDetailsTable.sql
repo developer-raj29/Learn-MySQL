@@ -25,6 +25,8 @@ VALUES
     (4, 3, 2, 600),
     (4, 6, 1, 90);
 
+DROP TABLE orderDetails;
+
 -- GET All information from OrderDetails Table
 SELECT
     *
