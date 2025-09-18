@@ -1,36 +1,23 @@
-CREATE DATABASE COLLAGE;
+SELECT Name, Marks
+FROM STUDENT;
 
-USE COLLAGE;
+SELECT DISTINCT City
+FROM STUDENT;
 
-CREATE TABLE
-    STUDENT (
-        RollNo INT PRIMARY KEY,
-        Name VARCHAR(50),
-        Marks INT NOT NULL,
-        Grads VARCHAR(1),
-        City VARCHAR(20)
-    );
+SELECT City, COUNT(Name)
+FROM Student
+GROUP BY City;
 
-INSERT INTO
-    STUDENT (RollNo, Name, Marks, Grads, City) VALUE (101, "Anil", 78, "C", "Pune"),
-    (102, "Bhumika", 93, "A", "Mumbai"),
-    (103, "Chetan", 85, "B", "Mumbai"),
-    (104, "Dhruv", 96, "A", "Delhi"),
-    (105, "Farah", 82, "B", "Delhi"),
-    (106, "Emanuel", 12, "F", "Delhi");
+SELECT City, MAX(Marks)
+FROM Student
+GROUP BY City;
 
-SELECT
-    Name,
-    Marks
-FROM
-    STUDENT;
+SELECT mode, COUNT(mode) 
+FROM Customer 
+GROUP BY mode;
 
-SELECT
-    *
-FROM
-    STUDENT;
-
-SELECT DISTINCT
-    City
-FROM
-    STUDENT;
+SELECT COUNT(Name) AS Name, MAX(Marks) AS MAX_Marks, City
+FROM Student
+GROUP BY City
+HAVING MAX(Marks) > 90
+ORDER BY MAX_Marks DESC;
